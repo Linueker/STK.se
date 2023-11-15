@@ -39,6 +39,7 @@ function showData() {
                 while (table.children.length != 1) {
                     table.children[1].remove();
                     // Tar bort all HTML i resultattabellen förutom table body som ligger på plats 0.
+                    document.getElementById('searchResult').style.display = 'none';
                 }
             }
             // Design och rubrik läggs till i tabellen som presenterar resultatet
@@ -77,6 +78,7 @@ function searchData(event) {
         while (table.children.length != 1) {
             table.children[1].remove();
             // Tar bort all html resultattabellen förutom table body som ligger på plats 0.
+            document.getElementById('searchResult').style.display = 'none';
         }
     }
     
@@ -114,10 +116,17 @@ let clearStorage = () => {
     let table = document.getElementById('searchResult').firstElementChild;
 
     if (table.children.length > 1) {
-        while (table.children.length != 1) {
-            table.children[1].remove(); // Tar bort allt i listan förutom table header som ligger på plats 0.
+        
+        let userConfirmed = confirm("Är du säker på att du vill radera all data?");
 
-            localStorage.clear(); // Tar bort allt ur local storage
+        if (userConfirmed) {
+            while (table.children.length != 1) {
+                table.children[1].remove(); // Tar bort all html resultattabellen förutom table body som ligger på plats 0.
+                localStorage.clear(); // Tar bort allt ur local storage
+                document.getElementById('searchResult').style.display = 'none';
+            }
+        } else {
+            // Användaren valde att inte radera data
         }
     }
     else {
