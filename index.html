@@ -35,7 +35,7 @@
                     <h2>Lägg till program</h2>
                     <input type="text" id="inputData" placeholder="--Titel-- (obligatoriskt)"><br>
                     <input type="text" id="programDescription" placeholder="--Beskrivning-- (obligatoriskt)"><br>
-                    <select name="searchAge" id="age" required>
+                    <select name="searchAge" id="age">
                         <option disabled selected value>--Välj åldersgräns--</option>
                         <option value="Barntillåten">Barntillåten</option>
                         <option value="7">Från 7 år</option>
@@ -45,7 +45,7 @@
                     </select><br>
                     <div id="buttons">
                         <button onclick="saveData()">Spara Program</button>
-                        <button onclick="showData()">Visa Alla Program</button>
+                        <button onclick="showData(event)">Visa Alla Program</button>
                         <button onclick="clearStorage()" id="delete">Rensa Alla Program</button>
                     </div>
                 </form>   

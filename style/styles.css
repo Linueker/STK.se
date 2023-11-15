@@ -125,6 +125,14 @@ body main table tr td strong {
   border-width: 1px;
   margin: 1px;
 }
+body footer {
+  display: flex;
+  justify-content: end;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-right: 2em;
+}
 body footer p {
   background-color: rgba(250, 235, 215, 0.692);
   border-radius: 6px;

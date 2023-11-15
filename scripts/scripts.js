@@ -27,7 +27,8 @@ function saveData() {
 }
 
 // Visa sparad data
-function showData() {
+function showData(event) {
+    event.preventDefault();
     const savedData = localStorage.getItem('savedData');
     if (savedData) {
         const parsedData = JSON.parse(savedData); //gör om JSON till objekt
