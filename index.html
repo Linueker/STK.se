@@ -1,22 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
     <head>
-    <link rel="stylesheet" href="style/styles.css">
-    <title>STK.se</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/styles.css">
+        <link rel="shortcut icon" href="media/icons8-under-construction-50.png" type="image/x-icon">
+        <title>STK.se</title>
     </head>
 
     <body>
-        <header></header>
+        <header>
+            <img src="media/coollogo_com-123323505.png" alt="">
+        </header>
         <main>
-            <h1> Demo - Spara data lokalt </h1>
+            <div id="managePrograms">
+                <form id="searchBox">
+                    <h3>Sök på programtitel</h3>
+                    <input type="text" id="searchTitel" placeholder="--Sök titel--"><br>
+                    <h3>..eller sök på åldersgräns</h3>
+                    
+                        <select name="searchAge" id="searchAge">
+                            <option disabled selected value>--Sök åldersgräns--</option>
+                            <option value="Barntillåten">Barntillåten</option>
+                            <option value="7">Från 7 år</option>
+                            <option value="11">Från 11 år</option>
+                            <option value="15">Från 15 år</option>
+                            <option value="18">Från 18 år</option>
+                        </select><br>
+                    
+                    <button onclick="searchData(event)" id="searchButton">Sök program</button>
+                </form>
+            
+                <form id="inputs">
+                    <h2>Lägg till program</h2>
+                    <input type="text" id="inputData" required placeholder="--Titel--"><br>
+                    <input type="text" id="programDescription" required placeholder="--Beskrivning--"><br>
+                    <select name="searchAge" id="age" required>
+                        <option disabled selected value>--Välj åldersgräns</option>
+                        <option value="Barntillåten">Barntillåten</option>
+                        <option value="7">Från 7 år</option>
+                        <option value="11">Från 11 år</option>
+                        <option value="15">Från 15 år</option>
+                        <option value="18">Från 18 år</option>
+                    </select><br>
+                    <div id="buttons">
+                        <button onclick="saveData()">Spara Program</button>
+                        <button onclick="showData()">Visa Alla Program</button>
+                        <button onclick="clearStorage()" id="delete">Rensa Alla Program</button>
+                    </div>
+                </form>   
+            </div>
 
-            <input type="text" id="inputData" placeholder="--Titel--">
-            <button onclick="saveData()">Spara Data</button>
-
-            <button onclick="showData()">Visa Data</button>
-
-            <button onclick="clearStorage()">Rensa Storage</button>
-
+            <table id="searchResult">
+                <tr><th></th><th></th><th></th></tr>
+            </table>
         </main>
         <footer></footer>
         <script src="scripts/scripts.js"></script>
