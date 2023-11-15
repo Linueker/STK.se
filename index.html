@@ -33,10 +33,10 @@
             
                 <form id="inputs">
                     <h2>Lägg till program</h2>
-                    <input type="text" id="inputData" required placeholder="--Titel--"><br>
-                    <input type="text" id="programDescription" required placeholder="--Beskrivning--"><br>
+                    <input type="text" id="inputData" placeholder="--Titel-- (obligatoriskt)"><br>
+                    <input type="text" id="programDescription" placeholder="--Beskrivning-- (obligatoriskt)"><br>
                     <select name="searchAge" id="age" required>
-                        <option disabled selected value>--Välj åldersgräns</option>
+                        <option disabled selected value>--Välj åldersgräns--</option>
                         <option value="Barntillåten">Barntillåten</option>
                         <option value="7">Från 7 år</option>
                         <option value="11">Från 11 år</option>
@@ -55,7 +55,9 @@
                 <tr><th></th><th></th><th></th></tr>
             </table>
         </main>
-        <footer></footer>
+        <footer>
+            <p>Sidan uppdaterades: 2023-11-15</p>
+        </footer>
         <script src="scripts/scripts.js"></script>
     </body>
 </html>
