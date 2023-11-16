@@ -115,20 +115,22 @@ function searchData(event) {
 // Rensa data
 let clearStorage = () => {
     let table = document.getElementById('searchResult').firstElementChild;
+    const savedData = localStorage.getItem('savedData');
 
-    if (table.children.length > 1) {
+    if (table.children.length > 1 || savedData) {
         
         let userConfirmed = confirm("Är du säker på att du vill radera all data?");
 
         if (userConfirmed) {
             while (table.children.length != 1) {
                 table.children[1].remove(); // Tar bort all html resultattabellen förutom table body som ligger på plats 0.
-                localStorage.clear(); // Tar bort allt ur local storage
                 document.getElementById('searchResult').style.display = 'none';
             }
+            localStorage.clear(); // Tar bort allt ur local storage
         } else {
             // Användaren valde att inte radera data
         }
+
     }
     else {
         alert("Listan är redan tom!")
